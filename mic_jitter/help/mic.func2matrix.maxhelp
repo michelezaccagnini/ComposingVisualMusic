@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 4,
-			"architecture" : "x86",
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 84.0, 129.0, 857.0, 578.0 ],
+		"rect" : [ 100.0, 100.0, 857.0, 578.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,9 +69,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 493.666687, 318.0, 269.0, 20.0 ],
+					"patching_rect" : [ 493.666687, 318.0, 267.0, 20.0 ],
 					"style" : "",
-					"text" : "mic.func2matrix @func_mode curve @size 1000"
+					"text" : "mic.func2matrix @func_mode curve @dim 1000"
 				}
 
 			}
@@ -362,7 +362,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 563.5, 313.0, 583.0, 313.0, 583.0, 172.0, 382.5, 172.0 ],
+					"midpoints" : [ 563.500031, 313.0, 583.0, 313.0, 583.0, 172.0, 382.5, 172.0 ],
 					"source" : [ "obj-16", 3 ]
 				}
 
@@ -471,8 +471,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",

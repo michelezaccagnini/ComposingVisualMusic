@@ -38,13 +38,65 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-53",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 263.666656, 647.0, 34.0, 20.0 ],
+					"style" : "",
+					"text" : "gate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 502.0, 488.0, 117.0, 20.0 ],
+					"style" : "",
+					"text" : "prepend func_mode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 461.0, 679.0, 95.0, 20.0 ],
+					"style" : "",
+					"text" : "mic.func2matrix"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "matrix_output",
+					"id" : "obj-43",
+					"index" : 0,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 461.0, 726.0, 30.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "to_function",
 					"id" : "obj-38",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 579.0, 615.0, 30.0, 30.0 ],
+					"patching_rect" : [ 573.0, 726.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -82,7 +134,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 192.999985, 637.0, 56.0, 20.0 ],
+					"patching_rect" : [ 199.999985, 647.0, 56.0, 20.0 ],
 					"style" : "",
 					"text" : "route list"
 				}
@@ -93,11 +145,11 @@
 					"id" : "obj-77",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 132.666656, 469.0, 30.0, 20.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "listdump", "" ],
+					"patching_rect" : [ 141.666672, 454.0, 78.0, 20.0 ],
 					"style" : "",
-					"text" : "t b l"
+					"text" : "t b listdump l"
 				}
 
 			}
@@ -112,7 +164,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "float", "", "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 132.666656, 522.0, 200.0, 100.0 ],
+					"patching_rect" : [ 141.666672, 523.0, 200.0, 100.0 ],
 					"range" : [ 0.0, 0.999861 ],
 					"style" : "",
 					"varname" : "function[2]"
@@ -147,7 +199,7 @@
 ,
 					"style" : "",
 					"text" : "pattr",
-					"varname" : "u770010418"
+					"varname" : "u433004468"
 				}
 
 			}
@@ -166,7 +218,7 @@
 ,
 					"style" : "",
 					"text" : "pattr",
-					"varname" : "u305010422"
+					"varname" : "u994004470"
 				}
 
 			}
@@ -185,7 +237,7 @@
 ,
 					"style" : "",
 					"text" : "pattr",
-					"varname" : "u052010398"
+					"varname" : "u032004472"
 				}
 
 			}
@@ -371,7 +423,7 @@
 ,
 					"style" : "",
 					"text" : "pattr",
-					"varname" : "u552007085"
+					"varname" : "u154004483"
 				}
 
 			}
@@ -390,7 +442,7 @@
 ,
 					"style" : "",
 					"text" : "pattr",
-					"varname" : "u959010389"
+					"varname" : "u700004485"
 				}
 
 			}
@@ -456,7 +508,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 190.0, 669.0, 55.0, 20.0 ],
+					"patching_rect" : [ 197.0, 679.0, 55.0, 20.0 ],
 					"style" : "",
 					"text" : "prepend"
 				}
@@ -467,11 +519,11 @@
 					"id" : "obj-22",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 6,
-					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 495.25, 27.0, 349.5, 20.0 ],
+					"numoutlets" : 7,
+					"outlettype" : [ "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 495.25, 27.0, 445.0, 20.0 ],
 					"style" : "",
-					"text" : "unjoin 5"
+					"text" : "unjoin 6"
 				}
 
 			}
@@ -736,7 +788,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 347.0, 727.0, 30.0, 30.0 ],
+					"patching_rect" : [ 346.0, 726.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -749,7 +801,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 190.0, 727.0, 30.0, 30.0 ],
+					"patching_rect" : [ 197.0, 722.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -775,7 +827,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 507.0, 494.0, 85.0, 20.0 ],
+					"patching_rect" : [ 200.666672, 484.0, 85.0, 20.0 ],
 					"style" : "",
 					"text" : "mic.func2func"
 				}
@@ -906,6 +958,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
+					"order" : 1,
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"order" : 0,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -913,6 +974,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
+					"order" : 1,
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"order" : 0,
 					"source" : [ "obj-14", 0 ]
 				}
 
@@ -962,7 +1032,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
-					"source" : [ "obj-22", 4 ]
+					"source" : [ "obj-22", 5 ]
 				}
 
 			}
@@ -991,6 +1061,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"source" : [ "obj-22", 4 ]
 				}
 
 			}
@@ -1240,6 +1317,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"midpoints" : [ 470.5, 725.0 ],
+					"source" : [ "obj-46", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-42", 0 ],
 					"source" : [ "obj-49", 1 ]
 				}
@@ -1248,7 +1333,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -1264,7 +1349,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-5", 1 ]
 				}
 
@@ -1272,7 +1357,23 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
-					"order" : 0,
+					"order" : 2,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"order" : 1,
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"order" : 1,
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -1288,6 +1389,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
 					"source" : [ "obj-51", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-53", 0 ]
 				}
 
 			}
@@ -1325,6 +1440,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-53", 1 ],
+					"source" : [ "obj-76", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-80", 0 ],
 					"source" : [ "obj-76", 1 ]
 				}
@@ -1333,6 +1455,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
+					"source" : [ "obj-77", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-76", 0 ],
 					"source" : [ "obj-77", 1 ]
 				}
 
@@ -1368,8 +1497,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-42" : [ "number[1]", "number[1]", 0 ],
 			"obj-44" : [ "number[2]", "number[2]", 0 ],
+			"obj-42" : [ "number[1]", "number[1]", 0 ],
 			"obj-31" : [ "number", "number", 0 ]
 		}
 ,
@@ -1377,6 +1506,13 @@
 				"name" : "mic.func2func.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/mic_externals/mic_envelope",
 				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mic.func2matrix.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/mic_externals/mic_jitter",
+				"patcherrelativepath" : "../mic_jitter",
 				"type" : "JSON",
 				"implicit" : 1
 			}
