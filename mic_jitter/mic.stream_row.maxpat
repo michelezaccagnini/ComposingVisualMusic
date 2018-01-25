@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 4,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1474.0, 116.0, 729.0, 480.0 ],
+		"rect" : [ 677.0, 116.0, 729.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 244.5, 216.0, 57.0, 20.0 ],
-					"presentation_rect" : [ 254.0, 228.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "zl.slice 1"
 				}
@@ -210,12 +209,12 @@
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
-					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 60.5, 44.0, 163.0, 20.0 ],
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 60.5, 44.0, 225.0, 20.0 ],
 					"style" : "",
-					"text" : "routepass jit_matrix dim type"
+					"text" : "routepass jit_matrix dim type planecount"
 				}
 
 			}
@@ -226,9 +225,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 260.5, 12.0, 123.0, 20.0 ],
+					"patching_rect" : [ 260.5, 12.0, 185.0, 20.0 ],
 					"style" : "",
-					"text" : "patcherargs dim type"
+					"text" : "patcherargs dim type planecount"
 				}
 
 			}
@@ -382,6 +381,15 @@
 					"color" : [ 0.619787, 0.662567, 0.090594, 1.0 ],
 					"destination" : [ "obj-16", 0 ],
 					"order" : 0,
+					"source" : [ "obj-4", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"color" : [ 0.619787, 0.662567, 0.090594, 1.0 ],
+					"destination" : [ "obj-16", 0 ],
+					"order" : 0,
 					"source" : [ "obj-4", 2 ]
 				}
 
@@ -392,6 +400,15 @@
 					"destination" : [ "obj-16", 0 ],
 					"order" : 0,
 					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"color" : [ 0.619787, 0.662567, 0.090594, 1.0 ],
+					"destination" : [ "obj-2", 0 ],
+					"order" : 1,
+					"source" : [ "obj-4", 3 ]
 				}
 
 			}
@@ -461,8 +478,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
