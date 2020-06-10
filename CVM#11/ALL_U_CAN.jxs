@@ -1,0 +1,86 @@
+<jittershader name="stripes">
+    <param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
+    <param name="textureMatrix0" type="mat4" state="TEXTURE0_MATRIX" />
+    <param name="position" type="vec3" state="POSITION" />
+    <param name="texcoord" type="vec2" state="TEXCOORD" />
+    <param name="iResolution" type="vec2" state="TEXDIM0" />
+	<param name="dummytex" type="int" default="0" />
+	<param name="iChannel0" type="int" default="1" />
+	<param name="iChannel1" type="int" default="2" />
+	<param name="iChannel2" type="int" default="3" />
+    <param name="iChannel3" type="int" default="4" />
+    <language name="glsl" version="1.5">
+        <bind param="modelViewProjectionMatrix" program="vp" />
+        <bind param="textureMatrix0" program="vp" />
+        <bind param="position" program="vp" />
+        <bind param="texcoord" program="vp" />
+        <bind param="iResolution" program="fp" />
+		<bind param="dummytex" program="fp" />
+		<bind param="iChannel0" program="fp" />
+		<bind param="iChannel1" program="fp" />
+		<bind param="iChannel2" program="fp" />
+        <bind param="iChannel3" program="fp" />
+		<program name="vp" type="vertex"  >
+		<![CDATA[
+			#version 330 core
+			
+			in vec3 position;
+			in vec2 texcoord;
+			out jit_PerVertex {
+				vec2 texcoord;
+			} jit_out;
+			uniform mat4 modelViewProjectionMatrix;
+			uniform mat4 textureMatrix0;
+			
+			void main(void) {
+				gl_Position = modelViewProjectionMatrix*vec4(position, 1.);
+				jit_out.texcoord = vec2(textureMatrix0*vec4(texcoord, 0., 1.));
+			}
+		]]>
+		</program>      
+        <program name="fp" type="fragment"  >
+        <![CDATA[
+            #version 330 core
+            
+            in jit_PerVertex {
+                vec2 texcoord;
+            } jit_in;
+            out vec4 outColor;
+
+        
+            uniform vec2 iResolution;
+			uniform sampler2DRect dummytex;
+			uniform sampler2D iChannel0;
+			uniform sampler2D iChannel1;
+			uniform sampler2D iChannel2;
+            uniform sampler2D iChannel3;
+
+// <<<<<<<<< START SHADERTOY PASTE
+float dDot(vec2 p, vec2 pos, float r){
+ 	return  1.-step(r,length(p-pos));
+}
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = fragCoord/iResolution.xy;
+    uv.x *= iResolution.x/iResolution.y;
+
+    float d;
+
+    for(int i=0; i<50; i++){
+        vec3 pos = texelFetch(iChannel0, ivec2(i, 0), 0).xyz;
+        d += dDot(uv, pos.xy, pos.z*0.05);
+    }
+    
+    fragColor = vec4(vec3(d),1.0);
+}
+
+// <<<<<<<<< END SHADERTOY PASTE
+
+			void main(void) {                
+				mainImage(outColor, jit_in.texcoord.st);
+			}
+        ]]>
+        </program>
+    </language>
+</jittershader>
